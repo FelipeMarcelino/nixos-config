@@ -49,7 +49,7 @@ map("v", "J", ":m '>+1<CR>gv=gv", default_opts)
 map("v", "K", ":m '<-2<CR>gv=gv", default_opts)
 
 -- Toggle between last 2 buffers
-map("n", "<leader><tab>", "<C-^", default_opts)
+map("n", "<leader><tab>", "<C-^>", default_opts)
 
 -- Indent in visual mode
 map("x", "<s-tab>", "<gv", default_opts)
@@ -67,6 +67,12 @@ map("n", "vv", ":<C-u>vsplit<CR>", default_opts)
 -- Next search
 map("n", "n", "nzzzv", default_opts)
 map("n", "N", "Nzzzv", default_opts)
+
+-- Resize
+map("n", "<C-M-H>", "<C-W><", default_opts)
+map("n", "<C-M-L>", "<C-W>>", default_opts)
+map("n", "<C-M-K>", "<C-W>-", default_opts)
+map("n", "<C-M-J>", "<C-W>+", default_opts)
 
 -----------------------------------------------------------
 -- Applications & Plugins shortcuts:

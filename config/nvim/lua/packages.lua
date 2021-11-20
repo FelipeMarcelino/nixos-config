@@ -63,7 +63,7 @@ require("packer").startup(
     use "tpope/vim-commentary"
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
-    use "christoomey/vim-tmux-navigator"
+    -- use "christoomey/vim-tmux-navigator"
     use "wellle/targets.vim"
     use "junegunn/goyo.vim"
     use "junegunn/fzf"

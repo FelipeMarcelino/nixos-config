@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./git.nix ./tmux.nix ./neovim.nix ./fonts.nix ./alacritty.nix ./shell.nix ./starship.nix ];
+  imports = [ ./monitors.nix ./git.nix ./i3.nix ./rofi.nix ./tmux.nix ./neovim.nix ./fonts.nix ./alacritty.nix ./shell.nix ./starship.nix ];
   home.username = "felipemarcelino";
   home.homeDirectory = "/home/felipemarcelino";
   home.stateVersion = "21.11";
