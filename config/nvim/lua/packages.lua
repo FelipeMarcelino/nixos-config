@@ -45,10 +45,7 @@ require("packer").startup(
     use {
       -- Git labels
       "lewis6991/gitsigns.nvim",
-      requires = {"nvim-lua/plenary.nvim"},
-      config = function()
-        require("gitsigns").setup()
-      end
+      requires = {"nvim-lua/plenary.nvim"}
     }
     use "ray-x/lsp_signature.nvim"
     use {

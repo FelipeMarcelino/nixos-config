@@ -4,7 +4,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      font.normal.family = "FiraCode Nerd Font";
+      font.normal.family = "FiraCode Nerd Font Mono";
       font.size = 13;
       font.use_thin_strokes = false;
       colors = {
