@@ -14,7 +14,7 @@ local cmd = vim.cmd
 -- clear search highlighting
 map('n', '<leader>c', ':nohl<CR>', default_opts)
 
--- map Esc to kk
+-- map Esc to jj
 map('i', 'jj', '<Esc>', {noremap = true})
 
 -- don't use arrow keys
@@ -34,6 +34,39 @@ map('n', '<C-l>', '<C-w>l', default_opts)
 
 -- close all windows and exit from neovim
 map('n', '<leader>qq', ':qa!<CR>', default_opts)
+
+-- Down is really the next line
+map('n', 'j', 'gj', default_opts)
+map('n', 'k', 'gk', default_opts)
+
+-- Move to end of the yanked text after yank and paste
+map('n', 'p', 'p`]', default_opts)
+map('v', 'y', 'y`]', default_opts)
+map('v', 'p', 'py`]', default_opts)
+
+-- Move selected lines up and down
+map('v', 'J', ":m '>+1<CR>gv=gv", default_opts)
+map('v', 'K', "m '<-2<CR>gv=gv", default_opts)
+
+-- Toggle between last 2 buffers
+map('n', '<leader><tab>', '<C-^', default_opts)
+
+-- Indent in visual mode
+map('x', '<s-tab>', "<gv", default_opts)
+map('x', '<tab>', ">gv", default_opts)
+
+-- Remove ex-mode
+map('', 'Q', '', {})
+map('', 'gq', '', {})
+map('', '<M-Q>', '', {})
+
+-- Split
+map('n', 'vs', ':<C-u>split<CR>', default_opts)
+map('n', 'vv', ':<C-u>vsplit<CR>', default_opts)
+
+-- Next search
+map('n', 'n', 'nzzzv', default_opts)
+map('n', 'N', 'Nzzzv', default_opts)
 
 -----------------------------------------------------------
 -- Applications & Plugins shortcuts:
