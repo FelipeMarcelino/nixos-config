@@ -3,9 +3,7 @@
 -----------------------------------------------------------
 
 -----------------------------------------------------------
--- Neovim API aliases
------------------------------------------------------------
---local map = vim.api.nvim_set_keymap  -- set global keymap
+-- Neovim API aliases --------------------------------------------------------- local map = vim.api.nvim_set_keymap  -- set global keymap
 local cmd = vim.cmd     				-- execute Vim commands
 local exec = vim.api.nvim_exec 	-- execute Vimscript
 local fn = vim.fn       				-- call Vim functions
@@ -89,3 +87,28 @@ opt.completeopt = 'menuone,noselect'
 
 -- disable nvim intro
 opt.shortmess:append "sI"
+
+
+-----------------------------------------------------------
+-- Vim-Doge
+-----------------------------------------------------------
+g.doge_doc_standard_python = "numpy"
+
+
+-----------------------------------------------------------
+-- Persistent undo
+-----------------------------------------------------------
+cmd [[
+    if has("persistent_undo")
+       let target_path = expand('~/.undodir')
+
+        " create the directory and any parent directories
+        " if the location does not exist.
+        if !isdirectory(target_path)
+            call mkdir(target_path, "p", 0700)
+        endif
+
+        let &undodir=target_path
+        set undofile
+    endif
+]]

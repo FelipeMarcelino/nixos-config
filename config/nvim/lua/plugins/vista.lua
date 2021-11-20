@@ -19,6 +19,9 @@ g.vista_icon_indent = '["╰─▸ ", "├─▸ "]'
 --- See all the avaliable executives via `:echo g:vista#executives`.
 g.vista_default_executive = 'ctags'
 
+-- Window size
+g.vista_sidebar_width = 45
+
 -- Ensure you have installed some decent font to show these pretty symbols,
 --- then you can enable icon for the kind.
 cmd [[let g:vista#renderer#enable_icon = 1]]

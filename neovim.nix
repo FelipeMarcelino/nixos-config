@@ -9,11 +9,17 @@
         nodePackages.bash-language-server
         rnix-lsp
         sumneko-lua-language-server
-        ctags
+	    universal-ctags
+        nodejs
         ];
 
     xdg.configFile.nvim = {
     	source = ./config/nvim;
     	recursive = true;
+    };
+
+    home.sessionVariables = {
+        EDITOR = "nvim";
+        VISUAL = "nvim";
     };
 }

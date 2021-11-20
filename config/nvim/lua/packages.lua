@@ -17,6 +17,7 @@ vim.api.nvim_exec([[
 
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'                    -- packer can manage itself
+    use 'nvim-lua/popup.nvim'                       -- Base
     use 'lukas-reineke/indent-blankline.nvim'       -- indent blank lines
     use 'liuchengxu/vista.vim'                      -- Tagviewer
     use 'kyazdani42/nvim-web-devicons'              -- Icons
@@ -42,5 +43,57 @@ require('packer').startup(function(use)
       require('gitsigns').setup()
     end,
    }
+   use 'ray-x/lsp_signature.nvim'
+   use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+   }
+   use 'windwp/nvim-autopairs'
+   -- Lua
+  use {
+  "folke/which-key.nvim",
+  config = function()
+    require("which-key").setup {
+    }
+  end
+  }
+  use 'tpope/vim-commentary'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
+  use 'christoomey/vim-tmux-navigator'
+  use 'wellle/targets.vim'
+  use 'junegunn/goyo.vim'
+  use 'junegunn/fzf'
+  use {                                            -- Colorizer
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end,
+  }
+  use {
+  "folke/trouble.nvim",
+  requires = "kyazdani42/nvim-web-devicons",
+  config = function()
+    require("trouble").setup {
+    }
+  end
+ }
+ use 'ggandor/lightspeed.nvim'
+ use {
+  'nvim-telescope/telescope.nvim',
+  requires = { {'nvim-lua/plenary.nvim'} }
+ }
+ use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+ use {
+  'romgrk/barbar.nvim',
+  requires = {'kyazdani42/nvim-web-devicons'}
+ }
+ use {'kkoomen/vim-doge', run = ':call doge#install()' }
+ use 'kosayoda/nvim-lightbulb'
+ use 'mbbill/undotree'
+ use {
+  'nvim-lualine/lualine.nvim',
+  requires = {'kyazdani42/nvim-web-devicons', opt = true}
+ }
 end)
 
