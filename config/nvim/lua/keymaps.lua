@@ -4,7 +4,7 @@
 -----------------------------------------------------------
 
 local map = vim.api.nvim_set_keymap
-local default_opts = { noremap = true, silent = true }
+local default_opts = {noremap = true, silent = true}
 local cmd = vim.cmd
 
 -----------------------------------------------------------
@@ -12,75 +12,75 @@ local cmd = vim.cmd
 -----------------------------------------------------------
 
 -- clear search highlighting
-map('n', '<leader>c', ':nohl<CR>', default_opts)
+map("n", "<leader>c", ":nohl<CR>", default_opts)
 
 -- map Esc to jj
-map('i', 'jj', '<Esc>', {noremap = true})
+map("i", "jj", "<Esc>", {noremap = true})
 
 -- don't use arrow keys
-map('', '<up>', '<nop>', { noremap = true })
-map('', '<down>', '<nop>', { noremap = true })
-map('', '<left>', '<nop>', { noremap = true })
-map('', '<right>', '<nop>', { noremap = true })
+map("", "<up>", "<nop>", {noremap = true})
+map("", "<down>", "<nop>", {noremap = true})
+map("", "<left>", "<nop>", {noremap = true})
+map("", "<right>", "<nop>", {noremap = true})
 
 -- fast saving with <leader> and s
-map('n', '<C-s>', ':w<CR>', default_opts)
+map("n", "<C-s>", ":w<CR>", default_opts)
 
 -- move around splits using Ctrl + {h,j,k,l}
-map('n', '<C-h>', '<C-w>h', default_opts)
-map('n', '<C-j>', '<C-w>j', default_opts)
-map('n', '<C-k>', '<C-w>k', default_opts)
-map('n', '<C-l>', '<C-w>l', default_opts)
+map("n", "<C-h>", "<C-w>h", default_opts)
+map("n", "<C-j>", "<C-w>j", default_opts)
+map("n", "<C-k>", "<C-w>k", default_opts)
+map("n", "<C-l>", "<C-w>l", default_opts)
 
 -- close all windows and exit from neovim
-map('n', '<leader>qq', ':qa!<CR>', default_opts)
+map("n", "<leader>qq", ":qa!<CR>", default_opts)
 
 -- Down is really the next line
-map('n', 'j', 'gj', default_opts)
-map('n', 'k', 'gk', default_opts)
+map("n", "j", "gj", default_opts)
+map("n", "k", "gk", default_opts)
 
 -- Move to end of the yanked text after yank and paste
-map('n', 'p', 'p`]', default_opts)
-map('v', 'y', 'y`]', default_opts)
-map('v', 'p', 'py`]', default_opts)
+map("n", "p", "p`]", default_opts)
+map("v", "y", "y`]", default_opts)
+map("v", "p", "py`]", default_opts)
 
 -- Move selected lines up and down
-map('v', 'J', ":m '>+1<CR>gv=gv", default_opts)
-map('v', 'K', "m '<-2<CR>gv=gv", default_opts)
+map("v", "J", ":m '>+1<CR>gv=gv", default_opts)
+map("v", "K", ":m '<-2<CR>gv=gv", default_opts)
 
 -- Toggle between last 2 buffers
-map('n', '<leader><tab>', '<C-^', default_opts)
+map("n", "<leader><tab>", "<C-^", default_opts)
 
 -- Indent in visual mode
-map('x', '<s-tab>', "<gv", default_opts)
-map('x', '<tab>', ">gv", default_opts)
+map("x", "<s-tab>", "<gv", default_opts)
+map("x", "<tab>", ">gv", default_opts)
 
 -- Remove ex-mode
-map('', 'Q', '', {})
-map('', 'gq', '', {})
-map('', '<M-Q>', '', {})
+map("", "Q", "", {})
+map("", "gq", "", {})
+map("", "<M-Q>", "", {})
 
 -- Split
-map('n', 'vs', ':<C-u>split<CR>', default_opts)
-map('n', 'vv', ':<C-u>vsplit<CR>', default_opts)
+map("n", "vs", ":<C-u>split<CR>", default_opts)
+map("n", "vv", ":<C-u>vsplit<CR>", default_opts)
 
 -- Next search
-map('n', 'n', 'nzzzv', default_opts)
-map('n', 'N', 'Nzzzv', default_opts)
+map("n", "n", "nzzzv", default_opts)
+map("n", "N", "Nzzzv", default_opts)
 
 -----------------------------------------------------------
 -- Applications & Plugins shortcuts:
 -----------------------------------------------------------
 -- Vista tag-viewer
-map('n', '<C-m>', ':Vista!!<CR>', default_opts)   -- open/close
+map("n", "<C-m>", ":Vista!!<CR>", default_opts) -- open/close
 
 -- nvim-tree
-map('n', '<C-n>', ':NvimTreeToggle<CR>', default_opts)       -- open/close
-map('n', '<reader>rr', ':NvimTreeRefresh<CR>', default_opts)  -- refresh
-map('n', '<leader>n', ':NvimTreeFindFile<CR>', default_opts) -- search file
+map("n", "<C-n>", ":NvimTreeToggle<CR>", default_opts) -- open/close
+map("n", "<reader>rr", ":NvimTreeRefresh<CR>", default_opts) -- refresh
+map("n", "<leader>n", ":NvimTreeFindFile<CR>", default_opts) -- search file
 
 -- Goyo
-map('n', '<leader>go', ':Goyo<CR>', default_opts) --  Goyo, distraction-free writing in vim
+map("n", "<leader>go", ":Goyo<CR>", default_opts) --  Goyo, distraction-free writing in vim
 
 -- Trouble
 map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", default_opts)

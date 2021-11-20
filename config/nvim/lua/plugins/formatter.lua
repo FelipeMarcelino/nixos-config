@@ -19,6 +19,16 @@ require("formatter").setup(
             stdin = true
           }
         end
+      },
+      python = {
+        -- Configuration for psf/black
+        function()
+          return {
+            exe = "black", -- this should be available on your $PATH
+            args = {"-"},
+            stdin = true
+          }
+        end
       }
     }
   }
