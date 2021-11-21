@@ -14,7 +14,7 @@ in
     config = {
       modifier = modifier_button;
       keybindings = lib.mkOptionDefault {
-        "${modifier_button}+Return" = "exec --no-startup-id alacritty";
+        "${modifier_button}+Return" = "exec --no-startup-id alacritty -t 'code'";
         "${modifier_button}+comma" = "kill";
         "${modifier_button}+d" = "exec --no-startup-id rofi -show drun";
         "${modifier_button}+h" = "focus left";
@@ -28,7 +28,6 @@ in
         "${modifier_button}+c" = "split h";
         "${modifier_button}+v" = "split v";
       };
-      bars = [ ];
       fonts = {
         names = [ "Fura Code Nerd Font Mono" ];
         size = 11.0;
@@ -53,10 +52,16 @@ in
       };
       startup = [
         { command = "autorandr -c"; notification = false; }
+        { command = "alacritty -t 'spt' -e spt"; notification = false; }
+        { command = "slack"; notification = false; }
+        { command = "discord"; notification = false; }
+        # { command = "systemctl --user restart polybar"; always = true; notification = false; }
       ];
       assigns = {
-        "1: code" = [{ class = "^Alacritty$"; }];
+        "1: code" = [{ title = "code"; }];
         "2: web" = [{ class = "^Brave-browser$"; }];
+        "3: msg" = [{ class = "^Slack$"; } { class = "^discord$"; }];
+        "4: media" = [{ title = "^spt$"; }];
       };
       workspaceOutputAssign = [
         { output = "HDMI-0"; workspace = "1: code"; }

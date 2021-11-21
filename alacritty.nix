@@ -48,6 +48,9 @@
         style.shape = "Beam";
         style.blinking = "On";
       };
+      window = {
+        dynamic_title = true;
+      };
     };
   };
 }
