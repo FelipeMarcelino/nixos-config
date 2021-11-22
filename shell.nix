@@ -6,7 +6,6 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
-    defaultKeymap = "vicmd";
     autocd = true;
     oh-my-zsh = {
       enable = true;

@@ -14,11 +14,16 @@
     ./starship.nix
     ./polybar.nix
     ./spotifyd.nix
+    ./flameshot.nix
+    ./zathura.nix
   ];
   home.username = "felipemarcelino";
   home.homeDirectory = "/home/felipemarcelino";
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
+    # Archive Manager
+    ranger
+
     # Communications
     discord
     slack
@@ -41,5 +46,6 @@
 
   # Htop
   programs.htop.enable = true;
+
   programs.home-manager.enable = true;
 }
