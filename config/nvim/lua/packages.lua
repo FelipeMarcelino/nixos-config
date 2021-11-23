@@ -99,5 +99,21 @@ require("packer").startup(
       requires = {"kyazdani42/nvim-web-devicons", opt = true}
     }
     use "mhartington/formatter.nvim"
+    use "mfussenegger/nvim-dap"
+    use {
+      "rcarriga/nvim-dap-ui",
+      requires = {"mfussenegger/nvim-dap"},
+      config = function()
+        require("dapui").setup()
+      end
+    }
+    use "theHamsta/nvim-dap-virtual-text"
+    use {
+      "mfussenegger/nvim-dap-python",
+      config = function()
+        require("dap-python").setup("python")
+      end
+    }
+    use "nvim-telescope/telescope-dap.nvim"
   end
 )

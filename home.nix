@@ -44,6 +44,10 @@
   # FZF
   programs.fzf.enable = true;
 
+  # Direnv
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
   # Htop
   programs.htop.enable = true;
 

@@ -178,6 +178,7 @@ opt.wildignore = {
 -- Vim-Doge
 -----------------------------------------------------------
 g.doge_doc_standard_python = "numpy"
+g.doge_enable_mappings = 0
 
 -----------------------------------------------------------
 -- Persistent undo

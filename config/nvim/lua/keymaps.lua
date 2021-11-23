@@ -104,3 +104,41 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", default_opts)
 
 -- Undotree
 map("n", "<leader>u", "<cmd>UndotreeToggle<CR>", default_opts)
+
+-- DAP
+local default_opts_dap = {noremap = false, silent = true}
+map("n", "<leader>d<space>", ":lua require'dap'.continue()<CR>", default_opts)
+map("n", "<leader>dl", ":lua require'dap'.setp_over()<CR>", default_opts_dap)
+map("n", "<leader>dj", ":lua require'dap'.step_into()<CR>", default_opts_dap)
+map("n", "<leader>dk", ":lua require'dap'.step_out()<CR>", default_opts_dap)
+map("n", "<leader>dbp", ":lua require'dap'.toggle_breakpoint()<CR>", default_opts_dap)
+map(
+  "n",
+  "<leader>dcbp",
+  ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+  default_opts_dap
+)
+map("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>", default_opts_dap)
+map("n", "<leader>dd", ":lua require'dap'.run_last()<CR>", default_opts_dap)
+map("n", "<leader>drc", ":lua require'dap'.run_to_cursor()<CR>", default_opts_dap)
+map("n", "<leader>ds", "<cmd>lua require'dap.ui.variables'.scopes()<CR>", default_opts_dap)
+map("n", "<leader>dh", "<cmd>lua require'dap.ui.variables'.hover()<CR>", default_opts_dap)
+map("v", "<leader>dv", "<cmd>lua require'dap.ui.variables'.visual_hover()<CR>", default_opts_dap)
+map("n", "<leader>duh", "<cmd>lua require'dap.ui.widgets'.hover()<CR>", default_opts_dap)
+map(
+  "n",
+  "<leader>duf",
+  "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<CR>",
+  default_opts_dap
+)
+map("n", "<leader>dui", "<cmd>lua require'dapui'.toggle()<CR>", default_opts_dap)
+
+-- Telescope-dap
+map("n", "<leader>dcc", "<cmd>lua require'telescope'.extensions.dap.commands{}<CR>", default_opts_dap)
+map("n", "<leader>dco", "<cmd>lua require'telescope'.extensions.dap.configurations{}<CR>", default_opts_dap)
+map("n", "<leader>dlb", "<cmd>lua require'telescope'.extensions.dap.list_breakpoints{}<CR>", default_opts_dap)
+map("n", "<leader>dv", "<cmd>lua require'telescope'.extensions.dap.variables{}<CR>", default_opts_dap)
+map("n", "<leader>df", "<cmd>lua require'telescope'.extensions.dap.frames{}<CR>", default_opts_dap)
+
+-- Doge
+map("n", "<leader>dog", "<cmd>DogeGenerate<CR>", default_opts)
