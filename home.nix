@@ -45,6 +45,13 @@
 
   ];
 
+  # Dropbox
+  services.dropbox.enable = true;
+  services.dropbox.path = "${config.home.homeDirectory}/dropbox";
+
+  # Feh
+  programs.feh.enable = true;
+
   # Index
   programs.nix-index.enable = true;
 

@@ -33,6 +33,8 @@
 
       alias reboot="systemctl reboot"
 
+      if [ ! "$TMUX" = "" ]; then export TERM=xterm-256color; fi
+
     '';
     initExtraFirst = ''
       KEYTIMEOUT=15

@@ -112,5 +112,6 @@ require("packer").startup(
       end
     }
     use "nvim-telescope/telescope-dap.nvim"
+    use "chrisbra/csv.vim"
   end
 )
