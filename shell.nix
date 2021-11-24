@@ -31,6 +31,8 @@
 
       eval "$(direnv hook zsh)"
 
+      alias reboot="systemctl reboot"
+
     '';
     initExtraFirst = ''
       KEYTIMEOUT=15

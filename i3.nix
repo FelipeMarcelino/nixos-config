@@ -57,6 +57,7 @@ in
         { command = "alacritty -t 'spt' -e spt"; notification = false; }
         { command = "slack"; notification = false; }
         { command = "discord"; notification = false; }
+        { command = "insync start"; notification = false; }
         # { command = "systemctl --user restart polybar"; always = true; notification = false; }
       ];
       assigns = {

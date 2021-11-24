@@ -3,6 +3,7 @@
 {
   imports = [
     ./monitors.nix
+    ./dunst.nix
     ./git.nix
     ./i3.nix
     ./rofi.nix
@@ -22,6 +23,7 @@
   home.stateVersion = "21.11";
   home.packages = with pkgs; [
     # Archive Manager
+    insync
     ranger
 
     # Communications
@@ -38,8 +40,13 @@
     spotify-tui
 
     # Tools
+    busybox
     unzip
+
   ];
+
+  # Index
+  programs.nix-index.enable = true;
 
   # FZF
   programs.fzf.enable = true;

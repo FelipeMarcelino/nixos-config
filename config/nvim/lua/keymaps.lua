@@ -35,6 +35,9 @@ map("n", "<C-l>", "<C-w>l", default_opts)
 -- close all windows and exit from neovim
 map("n", "<leader>qq", ":qa!<CR>", default_opts)
 
+-- close
+map("n", "<C-q>", ":q<CR>", default_opts)
+
 -- Down is really the next line
 map("n", "j", "gj", default_opts)
 map("n", "k", "gk", default_opts)
