@@ -36,7 +36,7 @@ map("n", "<C-l>", "<C-w>l", default_opts)
 map("n", "<leader>qq", ":qa!<CR>", default_opts)
 
 -- close
-map("n", "<C-q>", ":q<CR>", default_opts)
+map("n", "<C-q>", ":bd<CR>", default_opts)
 
 -- Down is really the next line
 map("n", "j", "gj", default_opts)

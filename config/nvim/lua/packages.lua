@@ -63,7 +63,6 @@ require("packer").startup(
     use "tpope/vim-commentary"
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
-    -- use "christoomey/vim-tmux-navigator"
     use "wellle/targets.vim"
     use "junegunn/goyo.vim"
     use "junegunn/fzf"
@@ -113,5 +112,7 @@ require("packer").startup(
     }
     use "nvim-telescope/telescope-dap.nvim"
     use "chrisbra/csv.vim"
+    --use "aserowy/tmux.nvim"
+    -- use "gelguy/wilder.nvim"
   end
 )

@@ -33,7 +33,7 @@
 
       alias reboot="systemctl reboot"
 
-      if [ ! "$TMUX" = "" ]; then export TERM=xterm-256color; fi
+      if [ ! "$TMUX" = "" ]; then export TERM=screen-256color; fi
 
     '';
     initExtraFirst = ''
