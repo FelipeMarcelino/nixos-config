@@ -14,7 +14,7 @@
     ./shell.nix
     ./starship.nix
     ./polybar.nix
-     #./spotifyd.nix
+    #./spotifyd.nix
     ./flameshot.nix
     ./zathura.nix
   ];
@@ -25,7 +25,7 @@
     # Archive Manager
     insync
     ranger
-  
+
     # Browsers
     brave
     tor-browser-bundle-bin
@@ -45,10 +45,15 @@
 
     # Tools
     busybox
+    gparted
     lm_sensors
+    lshw
     unzip
 
   ];
+
+  # Bluetooth
+  services.blueman-applet.enable = true;
 
   # Dropbox
   services.dropbox.enable = true;

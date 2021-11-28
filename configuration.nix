@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -18,7 +19,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "solid"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true;
+  hardware.bluetooth.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -71,7 +74,7 @@
   hardware.pulseaudio.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.felipemarcelino = {
+  users.users.felipemarcelino = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
@@ -115,7 +118,7 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  environment.pathsToLink = [ "/share/zsh" ]; 
+  environment.pathsToLink = [ "/share/zsh" ];
 
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -124,4 +127,3 @@
   system.stateVersion = "21.05";
 
 }
-
