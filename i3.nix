@@ -27,8 +27,8 @@ in
         "${modifier_button}+Shift+j" = "move down";
         "${modifier_button}+c" = "split h";
         "${modifier_button}+v" = "split v";
-        "${modifier_button}+p" = "exec --no-startup-id \"flameshot screen -p ~/pictures\"";
-        "${modifier_button}+Shift+p" = "exec --no-startup-id \"flameshot gui -p ~/pictures\"";
+        "${modifier_button}+p" = "exec --no-startup-id \"flameshot screen -p ~/Pictures\"";
+        "${modifier_button}+Shift+p" = "exec --no-startup-id \"flameshot gui -p ~/Pictures\"";
       };
       fonts = {
         names = [ "Fura Code Nerd Font Mono" ];

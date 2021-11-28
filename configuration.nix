@@ -11,8 +11,17 @@
       ./hardware-configuration.nix
     ];
 
-  # Use property packager
+  # Latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Use proprietary packages
   nixpkgs.config.allowUnfree = true;
+
+  # Use proprietary firmware
+  hardware.enableRedistributableFirmware = true;
+
+  # Microcodes intel
+  hardware.cpu.intel.updateMicrocode = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -22,6 +31,7 @@
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";

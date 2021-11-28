@@ -46,6 +46,7 @@
     # Tools
     busybox
     gparted
+    hwinfo
     lm_sensors
     lshw
     unzip
