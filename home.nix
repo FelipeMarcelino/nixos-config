@@ -14,7 +14,7 @@
     ./shell.nix
     ./starship.nix
     ./polybar.nix
-    #./spotifyd.nix
+    ./spotifyd.nix
     ./flameshot.nix
     ./zathura.nix
   ];
@@ -42,6 +42,7 @@
 
     # Media
     spotify-tui
+    vlc
 
     # Tools
     busybox
@@ -49,8 +50,8 @@
     hwinfo
     lm_sensors
     lshw
+    p7zip
     unzip
-
   ];
 
   # Bluetooth

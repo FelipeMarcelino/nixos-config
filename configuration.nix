@@ -134,6 +134,8 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # networking.firewall.enable = false;
 
+  services.tor.enable = true;
+
   system.stateVersion = "21.05";
 
 }
