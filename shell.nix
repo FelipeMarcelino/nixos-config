@@ -35,8 +35,6 @@
 
       if [ ! "$TMUX" = "" ]; then export TERM=screen-256color; fi
 
-      export NIX_PATH="nixos-config=/home/felipemarcelino/nixos-config/configuration.nix"
-
     '';
     initExtraFirst = ''
       KEYTIMEOUT=15

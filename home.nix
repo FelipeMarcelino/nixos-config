@@ -14,7 +14,7 @@
     ./shell.nix
     ./starship.nix
     ./polybar.nix
-    ./spotifyd.nix
+     #./spotifyd.nix
     ./flameshot.nix
     ./zathura.nix
   ];
@@ -25,6 +25,10 @@
     # Archive Manager
     insync
     ranger
+  
+    # Browsers
+    brave
+    tor-browser-bundle-bin
 
     # Communications
     discord
@@ -41,6 +45,7 @@
 
     # Tools
     busybox
+    lm_sensors
     unzip
 
   ];

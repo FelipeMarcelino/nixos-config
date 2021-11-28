@@ -6,12 +6,11 @@
 
 {
   imports =
-    [
-      # Include the results of the hardware scan.
+    [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
-  # Allow unfree
+  # Use property packager
   nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
@@ -29,6 +28,7 @@
   # replicates the default behaviour.
   networking.useDHCP = false;
   networking.interfaces.enp3s0.useDHCP = true;
+  networking.interfaces.enp6s0.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -45,7 +45,8 @@
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  # Enable the GNOME Desktop Environment.
+
+  # Enable the Plasma 5 Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.session = [
     {
@@ -69,31 +70,19 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.felipemarcelino = {
+   users.users.felipemarcelino = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    home = "/home/felipemarcelino";
     shell = pkgs.zsh;
   };
-
-  security.sudo.extraRules = [
-    { groups = [ "sudo" ]; commands = [{ command = "/sbin/reboot"; options = [ "NOPASSWD" ]; }]; }
-  ];
 
   # ZSH
   programs.zsh.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     # [-- Browser --]
-    brave
     firefox
-    tor-browser-bundle-bin
 
     # [-- Compilers --]
     gcc
@@ -113,8 +102,6 @@
     xclip
   ];
 
-  environment.pathsToLink = [ "/share/zsh" ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -128,12 +115,13 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Open ports in the firewall.
+  environment.pathsToLink = [ "/share/zsh" ]; 
+
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  system.stateVersion = "21.05"; # Did you read the comment?
+  system.stateVersion = "21.05";
 
 }
+
