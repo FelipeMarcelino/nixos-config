@@ -52,6 +52,7 @@
     lshw
     p7zip
     unzip
+    unrar
   ];
 
   # Bluetooth
