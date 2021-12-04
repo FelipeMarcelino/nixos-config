@@ -72,8 +72,8 @@ map("n", "n", "nzzzv", default_opts)
 map("n", "N", "Nzzzv", default_opts)
 
 -- Resize
-map("n", "<C-M-H>", "<C-W><", default_opts)
-map("n", "<C-M-L>", "<C-W>>", default_opts)
+map("n", "<C-M-L>", "<C-W><", default_opts)
+map("n", "<C-M-H>", "<C-W>>", default_opts)
 map("n", "<C-M-K>", "<C-W>-", default_opts)
 map("n", "<C-M-J>", "<C-W>+", default_opts)
 
@@ -111,7 +111,7 @@ map("n", "<leader>u", "<cmd>UndotreeToggle<CR>", default_opts)
 -- DAP
 local default_opts_dap = {noremap = false, silent = true}
 map("n", "<leader>d<space>", ":lua require'dap'.continue()<CR>", default_opts)
-map("n", "<leader>dl", ":lua require'dap'.setp_over()<CR>", default_opts_dap)
+map("n", "<leader>dl", ":lua require'dap'.step_over()<CR>", default_opts_dap)
 map("n", "<leader>dj", ":lua require'dap'.step_into()<CR>", default_opts_dap)
 map("n", "<leader>dk", ":lua require'dap'.step_out()<CR>", default_opts_dap)
 map("n", "<leader>dbp", ":lua require'dap'.toggle_breakpoint()<CR>", default_opts_dap)

@@ -76,6 +76,7 @@
 
   # Htop
   programs.htop.enable = true;
+  programs.htop.package = pkgs.htop-vim;
 
   programs.home-manager.enable = true;
 }

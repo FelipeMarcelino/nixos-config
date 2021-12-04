@@ -103,7 +103,7 @@ require("packer").startup(
       "rcarriga/nvim-dap-ui",
       requires = {"mfussenegger/nvim-dap"}
     }
-    use "theHamsta/nvim-dap-virtual-text"
+    -- use "theHamsta/nvim-dap-virtual-text"
     use {
       "mfussenegger/nvim-dap-python",
       config = function()
@@ -112,7 +112,7 @@ require("packer").startup(
     }
     use "nvim-telescope/telescope-dap.nvim"
     use "chrisbra/csv.vim"
-    --use "aserowy/tmux.nvim"
+    -- use "aserowy/tmux.nvim"
     -- use "gelguy/wilder.nvim"
   end
 )
