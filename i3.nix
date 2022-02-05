@@ -67,12 +67,12 @@ in
         "4: media" = [{ title = "^spt$"; }];
       };
       workspaceOutputAssign = [
-        { output = "HDMI-0"; workspace = "1: code"; }
-        { output = "DVI-D-0"; workspace = "2: web"; }
-        { output = "HDMI-0"; workspace = "3: msg"; }
-        { output = "DVI-D-0"; workspace = "4: media"; }
-        { output = "HDMI-0"; workspace = "5: email"; }
-        { output = "DVI-D-0"; workspace = "6: reader"; }
+        { output = "DP-0"; workspace = "1: code"; }
+        { output = "HDMI-0"; workspace = "2: web"; }
+        { output = "DP-0"; workspace = "3: msg"; }
+        { output = "HDMI-0"; workspace = "4: media"; }
+        { output = "DP-0"; workspace = "5: email"; }
+        { output = "HDMI-0"; workspace = "6: reader"; }
       ];
     };
   };

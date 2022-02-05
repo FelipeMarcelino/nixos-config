@@ -103,7 +103,7 @@ require("packer").startup(
       "rcarriga/nvim-dap-ui",
       requires = {"mfussenegger/nvim-dap"}
     }
-    -- use "theHamsta/nvim-dap-virtual-text"
+    use "theHamsta/nvim-dap-virtual-text"
     use {
       "mfussenegger/nvim-dap-python",
       config = function()

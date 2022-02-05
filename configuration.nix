@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -13,6 +13,15 @@
 
   # Latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Steam
+  programs.steam.enable = true;
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-original"
+    "steam-runtime"
+  ];
+  hardware.steam-hardware.enable = true;
 
   # Use proprietary packages
   nixpkgs.config.allowUnfree = true;
@@ -31,7 +40,12 @@
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
+  hardware.bluetooth.package = pkgs.bluezFull;
   services.blueman.enable = true;
+
+  # gnome
+  #services.dbus.packages = with pkgs; [ gnome3.dconf ];
+  programs.dconf.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";

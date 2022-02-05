@@ -41,11 +41,13 @@
     ripgrep
 
     # Media
+    stremio
     spotify-tui
     vlc
 
     # Tools
     busybox
+    dmidecode
     gparted
     hwinfo
     lm_sensors
